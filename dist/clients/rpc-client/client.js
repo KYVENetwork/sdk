@@ -58,10 +58,17 @@ var KyveClient = /** @class */ (function () {
     }
     KyveClient.prototype.signString = function (data) {
         return __awaiter(this, void 0, void 0, function () {
-            var signDoc;
-            return __generator(this, function (_a) {
-                signDoc = (0, proto_signing_1.makeSignDoc)(new Uint8Array(Buffer.from(data, "utf-8")), new Uint8Array(), "", 0);
-                return [2 /*return*/, this.signer.signDirect(this.account.address, signDoc)];
+            var signDoc, _a, _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        _a = proto_signing_1.makeSignDoc;
+                        _b = [new Uint8Array(Buffer.from(data, "utf-8")), new Uint8Array()];
+                        return [4 /*yield*/, this.nativeClient.getChainId()];
+                    case 1:
+                        signDoc = _a.apply(void 0, _b.concat([_c.sent(), 0]));
+                        return [2 /*return*/, this.signer.signDirect(this.account.address, signDoc)];
+                }
             });
         });
     };

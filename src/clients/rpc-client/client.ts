@@ -25,7 +25,7 @@ export default class KyveClient {
   }
 
   async signString(data: string) {
-    const signDoc = makeSignDoc(new Uint8Array(Buffer.from(data, "utf-8")), new Uint8Array(), "", 0);
+    const signDoc = makeSignDoc(new Uint8Array(Buffer.from(data, "utf-8")), new Uint8Array(), await this.nativeClient.getChainId(), 0);
     return this.signer.signDirect(this.account.address, signDoc)
   }
   async verifyString(signature: string, data: string, pubKey: Uint8Array) {
