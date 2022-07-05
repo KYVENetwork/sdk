@@ -30,6 +30,8 @@ import BigNumber from "bignumber.js";
 import { SigningStargateClient } from "@cosmjs/stargate";
 import { cosmos } from "@keplr-wallet/cosmos";
 import TxRaw = cosmos.tx.v1beta1.TxRaw;
+import {AccountData, DirectSignResponse} from "@cosmjs/proto-signing/build/signer";
+import SignDoc = cosmos.tx.v1beta1.SignDoc;
 const PATH_TO_TYPES =
   "./node_modules/@kyve/proto/dist/proto/kyve/registry/v1beta1";
 
@@ -155,6 +157,7 @@ beforeEach(() => {
     sendTokens: mockSendTokens,
     getBalance: mockGetBalance,
   } as unknown as SigningStargateClient;
+
   kyveClient = new KyveClient(mockNativeClient, mockAccountData);
 });
 

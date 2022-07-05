@@ -50,6 +50,7 @@ export class KyveSDK {
    * @return Promise<KyveClient>
    */
   async fromMnemonic(mnemonic: string): Promise<KyveClient> {
+    //DirectSecp256k1HdWallet
     const signedClient = await DirectSecp256k1HdWallet.fromMnemonic(mnemonic, {
       prefix: PREFIX,
     });

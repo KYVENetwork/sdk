@@ -96,8 +96,8 @@ function getSigningKyveClient(rpcEndpoint, signer, walletName, defaultTypes) {
                 case 2:
                     account = (_a.sent())[0];
                     if (typeof walletName === "string")
-                        return [2 /*return*/, new web_client_1["default"](client, account, walletName)];
-                    return [2 /*return*/, new client_1["default"](client, account)];
+                        return [2 /*return*/, new web_client_1["default"](client, account, signer, walletName)];
+                    return [2 /*return*/, new client_1["default"](client, account, signer)];
             }
         });
     });

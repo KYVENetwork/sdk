@@ -21,8 +21,8 @@ exports.__esModule = true;
 var client_1 = __importDefault(require("./client"));
 var KyveWebClient = /** @class */ (function (_super) {
     __extends(KyveWebClient, _super);
-    function KyveWebClient(client, account, walletName) {
-        var _this = _super.call(this, client, account) || this;
+    function KyveWebClient(client, account, signer, walletName) {
+        var _this = _super.call(this, client, account, signer) || this;
         _this.walletName = walletName;
         return _this;
     }
