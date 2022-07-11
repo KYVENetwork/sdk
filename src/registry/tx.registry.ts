@@ -14,7 +14,6 @@ import {
   MsgUpdateCommission,
   MsgReactivateStaker,
 } from "@kyve/proto/dist/proto/kyve/registry/v1beta1/tx";
-import { MsgSubmitProposal } from "./cosmos-registry";
 
 export const registry: ReadonlyArray<[string, GeneratedType]> = [
   ["/kyve.registry.v1beta1.MsgFundPool", MsgFundPool],
@@ -28,7 +27,8 @@ export const registry: ReadonlyArray<[string, GeneratedType]> = [
   ["/kyve.registry.v1beta1.MsgVoteProposal", MsgVoteProposal],
   ["/kyve.registry.v1beta1.MsgClaimUploaderRole", MsgClaimUploaderRole],
   ["/kyve.registry.v1beta1.MsgUpdateMetadata", MsgUpdateMetadata],
-  ["/cosmos.gov.v1beta1.MsgSubmitProposal", MsgSubmitProposal],
+  ["/kyve.registry.v1beta1.MsgUpdateCommission", MsgUpdateCommission],
+  ["/kyve.registry.v1beta1.MsgReactivateStaker", MsgReactivateStaker],
 ];
 export const load = (protoRegistry: Registry) => {
   registry.forEach(([typeUrl, mod]) => {
