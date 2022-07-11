@@ -90,6 +90,12 @@ exports.encodeTxMsg = {
             type_url: "/kyve.registry.v1beta1.MsgUpdateMetadata",
             value: tx_1.MsgUpdateMetadata.encode(value).finish()
         };
+    },
+    updateCommission: function (value) {
+        return {
+            type_url: "/kyve.registry.v1beta1.MsgUpdateCommission",
+            value: tx_1.MsgUpdateCommission.encode(value).finish()
+        };
     }
 };
 exports.withTypeUrl = {
@@ -156,6 +162,12 @@ exports.withTypeUrl = {
     updateMetadata: function (value) {
         return {
             typeUrl: "/kyve.registry.v1beta1.MsgUpdateMetadata",
+            value: value
+        };
+    },
+    updateCommission: function (value) {
+        return {
+            typeUrl: "/kyve.registry.v1beta1.MsgUpdateCommission",
             value: value
         };
     }
@@ -229,6 +241,12 @@ exports.MessageComposer = {
                 typeUrl: "/kyve.registry.v1beta1.MsgUpdateMetadata",
                 value: tx_1.MsgUpdateMetadata.toJSON(value)
             };
+        },
+        updateCommission: function (value) {
+            return {
+                typeUrl: "/kyve.registry.v1beta1.MsgUpdateCommission",
+                value: tx_1.MsgUpdateCommission.toJSON(value)
+            };
         }
     },
     fromJSON: {
@@ -297,6 +315,12 @@ exports.MessageComposer = {
                 typeUrl: "/kyve.registry.v1beta1.MsgUpdateMetadata",
                 value: tx_1.MsgUpdateMetadata.fromJSON(value)
             };
+        },
+        updateCommission: function (value) {
+            return {
+                typeUrl: "/kyve.registry.v1beta1.MsgUpdateCommission",
+                value: tx_1.MsgUpdateCommission.fromJSON(value)
+            };
         }
     },
     fromPartial: {
@@ -364,6 +388,12 @@ exports.MessageComposer = {
             return {
                 typeUrl: "/kyve.registry.v1beta1.MsgUpdateMetadata",
                 value: tx_1.MsgUpdateMetadata.fromPartial(value)
+            };
+        },
+        updateCommission: function (value) {
+            return {
+                typeUrl: "/kyve.registry.v1beta1.MsgUpdateCommission",
+                value: tx_1.MsgUpdateCommission.fromPartial(value)
             };
         }
     }

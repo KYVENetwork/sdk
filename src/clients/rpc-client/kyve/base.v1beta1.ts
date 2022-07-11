@@ -7,6 +7,7 @@ import {
   MsgSubmitBundleProposal,
   MsgUndelegatePool,
   MsgUnstakePool,
+  MsgUpdateCommission,
   MsgUpdateMetadata,
   MsgVoteProposal,
   MsgWithdrawPool,
@@ -207,6 +208,23 @@ export default class KyveBaseMsg {
     }
   ) {
     const tx = withTypeUrl.updateMetadata({
+      ...value,
+      creator: this.account.address,
+    });
+    return new TxPromise(
+      this.nativeClient,
+      await signTx(this.nativeClient, this.account.address, tx, options)
+    );
+  }
+
+  public async updateCommission(
+    value: Omit<MsgUpdateCommission, "creator">,
+    options?: {
+      fee?: StdFee | "auto" | number;
+      memo?: string;
+    }
+  ) {
+    const tx = withTypeUrl.updateCommission({
       ...value,
       creator: this.account.address,
     });

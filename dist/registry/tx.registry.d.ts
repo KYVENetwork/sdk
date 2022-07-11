@@ -1,5 +1,5 @@
 import { GeneratedType, Registry } from "@cosmjs/proto-signing";
-import { MsgFundPool, MsgDefundPool, MsgStakePool, MsgUnstakePool, MsgDelegatePool, MsgWithdrawPool, MsgUndelegatePool, MsgSubmitBundleProposal, MsgVoteProposal, MsgClaimUploaderRole, MsgUpdateMetadata } from "@kyve/proto/dist/proto/kyve/registry/v1beta1/tx";
+import { MsgFundPool, MsgDefundPool, MsgStakePool, MsgUnstakePool, MsgDelegatePool, MsgWithdrawPool, MsgUndelegatePool, MsgSubmitBundleProposal, MsgVoteProposal, MsgClaimUploaderRole, MsgUpdateMetadata, MsgUpdateCommission } from "@kyve/proto/dist/proto/kyve/registry/v1beta1/tx";
 export declare const registry: ReadonlyArray<[string, GeneratedType]>;
 export declare const load: (protoRegistry: Registry) => void;
 export declare const encodeTxMsg: {
@@ -44,6 +44,10 @@ export declare const encodeTxMsg: {
         value: Uint8Array;
     };
     updateMetadata(value: MsgUpdateMetadata): {
+        type_url: string;
+        value: Uint8Array;
+    };
+    updateCommission(value: MsgUpdateCommission): {
         type_url: string;
         value: Uint8Array;
     };
@@ -93,6 +97,10 @@ export declare const withTypeUrl: {
         typeUrl: string;
         value: MsgUpdateMetadata;
     };
+    updateCommission(value: MsgUpdateCommission): {
+        typeUrl: string;
+        value: MsgUpdateCommission;
+    };
 };
 export declare const MessageComposer: {
     encoded: {
@@ -137,6 +145,10 @@ export declare const MessageComposer: {
             value: Uint8Array;
         };
         updateMetadata(value: MsgUpdateMetadata): {
+            type_url: string;
+            value: Uint8Array;
+        };
+        updateCommission(value: MsgUpdateCommission): {
             type_url: string;
             value: Uint8Array;
         };
@@ -186,6 +198,10 @@ export declare const MessageComposer: {
             typeUrl: string;
             value: MsgUpdateMetadata;
         };
+        updateCommission(value: MsgUpdateCommission): {
+            typeUrl: string;
+            value: MsgUpdateCommission;
+        };
     };
     toJSON: {
         fundPool(value: MsgFundPool): {
@@ -229,6 +245,10 @@ export declare const MessageComposer: {
             value: unknown;
         };
         updateMetadata(value: MsgUpdateMetadata): {
+            typeUrl: string;
+            value: unknown;
+        };
+        updateCommission(value: MsgUpdateCommission): {
             typeUrl: string;
             value: unknown;
         };
@@ -278,6 +298,10 @@ export declare const MessageComposer: {
             typeUrl: string;
             value: MsgUpdateMetadata;
         };
+        updateCommission(value: any): {
+            typeUrl: string;
+            value: MsgUpdateCommission;
+        };
     };
     fromPartial: {
         fundPool(value: MsgFundPool): {
@@ -323,6 +347,10 @@ export declare const MessageComposer: {
         updateMetadata(value: MsgUpdateMetadata): {
             typeUrl: string;
             value: MsgUpdateMetadata;
+        };
+        updateCommission(value: MsgUpdateCommission): {
+            typeUrl: string;
+            value: MsgUpdateCommission;
         };
     };
 };

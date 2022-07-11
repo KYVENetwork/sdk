@@ -1,4 +1,4 @@
-import { MsgClaimUploaderRole, MsgDefundPool, MsgDelegatePool, MsgFundPool, MsgStakePool, MsgSubmitBundleProposal, MsgUndelegatePool, MsgUnstakePool, MsgUpdateMetadata, MsgVoteProposal, MsgWithdrawPool } from "@kyve/proto/dist/proto/kyve/registry/v1beta1/tx";
+import { MsgClaimUploaderRole, MsgDefundPool, MsgDelegatePool, MsgFundPool, MsgStakePool, MsgSubmitBundleProposal, MsgUndelegatePool, MsgUnstakePool, MsgUpdateCommission, MsgUpdateMetadata, MsgVoteProposal, MsgWithdrawPool } from "@kyve/proto/dist/proto/kyve/registry/v1beta1/tx";
 import { SigningStargateClient } from "@cosmjs/stargate";
 import { StdFee } from "@cosmjs/amino/build/signdoc";
 import { AccountData } from "@cosmjs/amino/build/signer";
@@ -48,6 +48,10 @@ export default class KyveBaseMsg {
         memo?: string;
     }): Promise<TxPromise>;
     updateMetadata(value: Omit<MsgUpdateMetadata, "creator">, options?: {
+        fee?: StdFee | "auto" | number;
+        memo?: string;
+    }): Promise<TxPromise>;
+    updateCommission(value: Omit<MsgUpdateCommission, "creator">, options?: {
         fee?: StdFee | "auto" | number;
         memo?: string;
     }): Promise<TxPromise>;

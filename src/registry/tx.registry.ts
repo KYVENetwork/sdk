@@ -11,6 +11,7 @@ import {
   MsgVoteProposal,
   MsgClaimUploaderRole,
   MsgUpdateMetadata,
+  MsgUpdateCommission,
 } from "@kyve/proto/dist/proto/kyve/registry/v1beta1/tx";
 import { MsgSubmitProposal } from "./cosmos-registry";
 
@@ -110,6 +111,13 @@ export const encodeTxMsg = {
       value: MsgUpdateMetadata.encode(value).finish(),
     };
   },
+
+  updateCommission(value: MsgUpdateCommission) {
+    return {
+      type_url: "/kyve.registry.v1beta1.MsgUpdateCommission",
+      value: MsgUpdateCommission.encode(value).finish(),
+    };
+  },
 };
 export const withTypeUrl = {
   fundPool(value: MsgFundPool) {
@@ -185,6 +193,13 @@ export const withTypeUrl = {
   updateMetadata(value: MsgUpdateMetadata) {
     return {
       typeUrl: "/kyve.registry.v1beta1.MsgUpdateMetadata",
+      value,
+    };
+  },
+
+  updateCommission(value: MsgUpdateCommission) {
+    return {
+      typeUrl: "/kyve.registry.v1beta1.MsgUpdateCommission",
       value,
     };
   },
@@ -269,6 +284,13 @@ export const MessageComposer = {
         value: MsgUpdateMetadata.toJSON(value),
       };
     },
+
+    updateCommission(value: MsgUpdateCommission) {
+      return {
+        typeUrl: "/kyve.registry.v1beta1.MsgUpdateCommission",
+        value: MsgUpdateCommission.toJSON(value),
+      };
+    },
   },
   fromJSON: {
     fundPool(value: any) {
@@ -347,6 +369,13 @@ export const MessageComposer = {
         value: MsgUpdateMetadata.fromJSON(value),
       };
     },
+
+    updateCommission(value: any) {
+      return {
+        typeUrl: "/kyve.registry.v1beta1.MsgUpdateCommission",
+        value: MsgUpdateCommission.fromJSON(value),
+      };
+    },
   },
   fromPartial: {
     fundPool(value: MsgFundPool) {
@@ -423,6 +452,13 @@ export const MessageComposer = {
       return {
         typeUrl: "/kyve.registry.v1beta1.MsgUpdateMetadata",
         value: MsgUpdateMetadata.fromPartial(value),
+      };
+    },
+
+    updateCommission(value: MsgUpdateCommission) {
+      return {
+        typeUrl: "/kyve.registry.v1beta1.MsgUpdateCommission",
+        value: MsgUpdateCommission.fromPartial(value),
       };
     },
   },
