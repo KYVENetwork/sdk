@@ -96,6 +96,12 @@ exports.encodeTxMsg = {
             type_url: "/kyve.registry.v1beta1.MsgUpdateCommission",
             value: tx_1.MsgUpdateCommission.encode(value).finish()
         };
+    },
+    reactivateStaker: function (value) {
+        return {
+            type_url: "/kyve.registry.v1beta1.MsgReactivateStaker",
+            value: tx_1.MsgReactivateStaker.encode(value).finish()
+        };
     }
 };
 exports.withTypeUrl = {
@@ -168,6 +174,12 @@ exports.withTypeUrl = {
     updateCommission: function (value) {
         return {
             typeUrl: "/kyve.registry.v1beta1.MsgUpdateCommission",
+            value: value
+        };
+    },
+    reactivateStaker: function (value) {
+        return {
+            typeUrl: "/kyve.registry.v1beta1.MsgReactivateStaker",
             value: value
         };
     }
@@ -247,6 +259,12 @@ exports.MessageComposer = {
                 typeUrl: "/kyve.registry.v1beta1.MsgUpdateCommission",
                 value: tx_1.MsgUpdateCommission.toJSON(value)
             };
+        },
+        reactivateStaker: function (value) {
+            return {
+                typeUrl: "/kyve.registry.v1beta1.MsgReactivateStaker",
+                value: tx_1.MsgReactivateStaker.toJSON(value)
+            };
         }
     },
     fromJSON: {
@@ -321,6 +339,12 @@ exports.MessageComposer = {
                 typeUrl: "/kyve.registry.v1beta1.MsgUpdateCommission",
                 value: tx_1.MsgUpdateCommission.fromJSON(value)
             };
+        },
+        reactivateStaker: function (value) {
+            return {
+                typeUrl: "/kyve.registry.v1beta1.MsgReactivateStaker",
+                value: tx_1.MsgReactivateStaker.fromJSON(value)
+            };
         }
     },
     fromPartial: {
@@ -394,6 +418,12 @@ exports.MessageComposer = {
             return {
                 typeUrl: "/kyve.registry.v1beta1.MsgUpdateCommission",
                 value: tx_1.MsgUpdateCommission.fromPartial(value)
+            };
+        },
+        reactivateStaker: function (value) {
+            return {
+                typeUrl: "/kyve.registry.v1beta1.MsgReactivateStaker",
+                value: tx_1.MsgReactivateStaker.fromPartial(value)
             };
         }
     }

@@ -12,6 +12,7 @@ import {
   MsgClaimUploaderRole,
   MsgUpdateMetadata,
   MsgUpdateCommission,
+  MsgReactivateStaker,
 } from "@kyve/proto/dist/proto/kyve/registry/v1beta1/tx";
 import { MsgSubmitProposal } from "./cosmos-registry";
 
@@ -118,6 +119,13 @@ export const encodeTxMsg = {
       value: MsgUpdateCommission.encode(value).finish(),
     };
   },
+
+  reactivateStaker(value: MsgReactivateStaker) {
+    return {
+      type_url: "/kyve.registry.v1beta1.MsgReactivateStaker",
+      value: MsgReactivateStaker.encode(value).finish(),
+    };
+  },
 };
 export const withTypeUrl = {
   fundPool(value: MsgFundPool) {
@@ -200,6 +208,13 @@ export const withTypeUrl = {
   updateCommission(value: MsgUpdateCommission) {
     return {
       typeUrl: "/kyve.registry.v1beta1.MsgUpdateCommission",
+      value,
+    };
+  },
+
+  reactivateStaker(value: MsgReactivateStaker) {
+    return {
+      typeUrl: "/kyve.registry.v1beta1.MsgReactivateStaker",
       value,
     };
   },
@@ -291,6 +306,13 @@ export const MessageComposer = {
         value: MsgUpdateCommission.toJSON(value),
       };
     },
+
+    reactivateStaker(value: MsgReactivateStaker) {
+      return {
+        typeUrl: "/kyve.registry.v1beta1.MsgReactivateStaker",
+        value: MsgReactivateStaker.toJSON(value),
+      };
+    },
   },
   fromJSON: {
     fundPool(value: any) {
@@ -376,6 +398,13 @@ export const MessageComposer = {
         value: MsgUpdateCommission.fromJSON(value),
       };
     },
+
+    reactivateStaker(value: any) {
+      return {
+        typeUrl: "/kyve.registry.v1beta1.MsgReactivateStaker",
+        value: MsgReactivateStaker.fromJSON(value),
+      };
+    },
   },
   fromPartial: {
     fundPool(value: MsgFundPool) {
@@ -459,6 +488,13 @@ export const MessageComposer = {
       return {
         typeUrl: "/kyve.registry.v1beta1.MsgUpdateCommission",
         value: MsgUpdateCommission.fromPartial(value),
+      };
+    },
+
+    reactivateStaker(value: MsgReactivateStaker) {
+      return {
+        typeUrl: "/kyve.registry.v1beta1.MsgReactivateStaker",
+        value: MsgReactivateStaker.fromPartial(value),
       };
     },
   },
