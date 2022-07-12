@@ -144,12 +144,13 @@ var KyveRegistryLCDClient = /** @class */ (function (_super) {
     /* StakersList returns all staker addresses with their corresponding staking amount for a given pool */
     KyveRegistryLCDClient.prototype.stakersList = function (params) {
         return __awaiter(this, void 0, void 0, function () {
-            var endpoint;
+            var parameters, endpoint;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        parameters = {};
                         endpoint = "kyve/registry/v1beta1/stakers_list/".concat(params.pool_id);
-                        return [4 /*yield*/, this.request(endpoint)];
+                        return [4 /*yield*/, this.request(endpoint, parameters)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
