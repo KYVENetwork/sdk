@@ -1,5 +1,5 @@
 import { GeneratedType, Registry } from "@cosmjs/proto-signing";
-import { MsgFundPool, MsgDefundPool, MsgStakePool, MsgUnstakePool, MsgDelegatePool, MsgWithdrawPool, MsgUndelegatePool, MsgSubmitBundleProposal, MsgVoteProposal, MsgClaimUploaderRole, MsgUpdateMetadata, MsgUpdateCommission, MsgReactivateStaker } from "@kyve/proto/dist/proto/kyve/registry/v1beta1/tx";
+import { MsgFundPool, MsgDefundPool, MsgStakePool, MsgUnstakePool, MsgDelegatePool, MsgWithdrawPool, MsgUndelegatePool, MsgSubmitBundleProposal, MsgVoteProposal, MsgClaimUploaderRole, MsgUpdateMetadata, MsgUpdateCommission, MsgReactivateStaker, MsgRedelegatePool } from "@kyve/proto/dist/proto/kyve/registry/v1beta1/tx";
 export declare const registry: ReadonlyArray<[string, GeneratedType]>;
 export declare const load: (protoRegistry: Registry) => void;
 export declare const encodeTxMsg: {
@@ -24,6 +24,10 @@ export declare const encodeTxMsg: {
         value: Uint8Array;
     };
     withdrawPool(value: MsgWithdrawPool): {
+        type_url: string;
+        value: Uint8Array;
+    };
+    redelegatePool(value: MsgRedelegatePool): {
         type_url: string;
         value: Uint8Array;
     };
@@ -81,6 +85,10 @@ export declare const withTypeUrl: {
         typeUrl: string;
         value: MsgWithdrawPool;
     };
+    redelegatePool(value: MsgRedelegatePool): {
+        typeUrl: string;
+        value: MsgRedelegatePool;
+    };
     undelegatePool(value: MsgUndelegatePool): {
         typeUrl: string;
         value: MsgUndelegatePool;
@@ -133,6 +141,10 @@ export declare const MessageComposer: {
             value: Uint8Array;
         };
         withdrawPool(value: MsgWithdrawPool): {
+            type_url: string;
+            value: Uint8Array;
+        };
+        redelegatePool(value: MsgRedelegatePool): {
             type_url: string;
             value: Uint8Array;
         };
@@ -190,6 +202,10 @@ export declare const MessageComposer: {
             typeUrl: string;
             value: MsgWithdrawPool;
         };
+        redelegatePool(value: MsgRedelegatePool): {
+            typeUrl: string;
+            value: MsgRedelegatePool;
+        };
         undelegatePool(value: MsgUndelegatePool): {
             typeUrl: string;
             value: MsgUndelegatePool;
@@ -241,6 +257,10 @@ export declare const MessageComposer: {
             value: unknown;
         };
         withdrawPool(value: MsgWithdrawPool): {
+            typeUrl: string;
+            value: unknown;
+        };
+        redelegatePool(value: MsgRedelegatePool): {
             typeUrl: string;
             value: unknown;
         };
@@ -298,6 +318,10 @@ export declare const MessageComposer: {
             typeUrl: string;
             value: MsgWithdrawPool;
         };
+        redelegatePool(value: any): {
+            typeUrl: string;
+            value: MsgRedelegatePool;
+        };
         undelegatePool(value: any): {
             typeUrl: string;
             value: MsgUndelegatePool;
@@ -351,6 +375,10 @@ export declare const MessageComposer: {
         withdrawPool(value: MsgWithdrawPool): {
             typeUrl: string;
             value: MsgWithdrawPool;
+        };
+        redelegatePool(value: MsgRedelegatePool): {
+            typeUrl: string;
+            value: MsgRedelegatePool;
         };
         undelegatePool(value: MsgUndelegatePool): {
             typeUrl: string;

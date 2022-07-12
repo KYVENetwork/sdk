@@ -4,6 +4,7 @@ import {
   MsgDelegatePool,
   MsgFundPool,
   MsgReactivateStaker,
+  MsgRedelegatePool,
   MsgStakePool,
   MsgSubmitBundleProposal,
   MsgUndelegatePool,
@@ -243,6 +244,23 @@ export default class KyveBaseMsg {
     }
   ) {
     const tx = withTypeUrl.reactivateStaker({
+      ...value,
+      creator: this.account.address,
+    });
+    return new TxPromise(
+      this.nativeClient,
+      await signTx(this.nativeClient, this.account.address, tx, options)
+    );
+  }
+
+  public async redelegatePool(
+    value: Omit<MsgRedelegatePool, "creator">,
+    options?: {
+      fee?: StdFee | "auto" | number;
+      memo?: string;
+    }
+  ) {
+    const tx = withTypeUrl.redelegatePool({
       ...value,
       creator: this.account.address,
     });

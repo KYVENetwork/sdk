@@ -13,6 +13,7 @@ import {
   MsgUpdateMetadata,
   MsgUpdateCommission,
   MsgReactivateStaker,
+  MsgRedelegatePool,
 } from "@kyve/proto/dist/proto/kyve/registry/v1beta1/tx";
 import { MsgSubmitProposal } from "./cosmos-registry";
 
@@ -23,6 +24,7 @@ export const registry: ReadonlyArray<[string, GeneratedType]> = [
   ["/kyve.registry.v1beta1.MsgUnstakePool", MsgUnstakePool],
   ["/kyve.registry.v1beta1.MsgDelegatePool", MsgDelegatePool],
   ["/kyve.registry.v1beta1.MsgWithdrawPool", MsgWithdrawPool],
+  ["/kyve.registry.v1beta1.MsgRedelegatePool", MsgRedelegatePool],
   ["/kyve.registry.v1beta1.MsgUndelegatePool", MsgUndelegatePool],
   ["/kyve.registry.v1beta1.MsgSubmitBundleProposal", MsgSubmitBundleProposal],
   ["/kyve.registry.v1beta1.MsgVoteProposal", MsgVoteProposal],
@@ -77,6 +79,13 @@ export const encodeTxMsg = {
     return {
       type_url: "/kyve.registry.v1beta1.MsgWithdrawPool",
       value: MsgWithdrawPool.encode(value).finish(),
+    };
+  },
+
+  redelegatePool(value: MsgRedelegatePool) {
+    return {
+      type_url: "/kyve.registry.v1beta1.MsgRedelegatePool",
+      value: MsgRedelegatePool.encode(value).finish(),
     };
   },
 
@@ -168,6 +177,13 @@ export const withTypeUrl = {
   withdrawPool(value: MsgWithdrawPool) {
     return {
       typeUrl: "/kyve.registry.v1beta1.MsgWithdrawPool",
+      value,
+    };
+  },
+
+  redelegatePool(value: MsgRedelegatePool) {
+    return {
+      typeUrl: "/kyve.registry.v1beta1.MsgRedelegatePool",
       value,
     };
   },
@@ -267,6 +283,13 @@ export const MessageComposer = {
       };
     },
 
+    redelegatePool(value: MsgRedelegatePool) {
+      return {
+        typeUrl: "/kyve.registry.v1beta1.MsgRedelegatePool",
+        value: MsgRedelegatePool.toJSON(value),
+      };
+    },
+
     undelegatePool(value: MsgUndelegatePool) {
       return {
         typeUrl: "/kyve.registry.v1beta1.MsgUndelegatePool",
@@ -359,6 +382,13 @@ export const MessageComposer = {
       };
     },
 
+    redelegatePool(value: any) {
+      return {
+        typeUrl: "/kyve.registry.v1beta1.MsgRedelegatePool",
+        value: MsgRedelegatePool.fromJSON(value),
+      };
+    },
+
     undelegatePool(value: any) {
       return {
         typeUrl: "/kyve.registry.v1beta1.MsgUndelegatePool",
@@ -448,6 +478,13 @@ export const MessageComposer = {
       return {
         typeUrl: "/kyve.registry.v1beta1.MsgWithdrawPool",
         value: MsgWithdrawPool.fromPartial(value),
+      };
+    },
+
+    redelegatePool(value: MsgRedelegatePool) {
+      return {
+        typeUrl: "/kyve.registry.v1beta1.MsgRedelegatePool",
+        value: MsgRedelegatePool.fromPartial(value),
       };
     },
 

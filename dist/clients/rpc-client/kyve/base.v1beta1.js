@@ -253,6 +253,21 @@ var KyveBaseMsg = /** @class */ (function () {
             });
         });
     };
+    KyveBaseMsg.prototype.redelegatePool = function (value, options) {
+        return __awaiter(this, void 0, void 0, function () {
+            var tx, _a, _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        tx = tx_registry_1.withTypeUrl.redelegatePool(__assign(__assign({}, value), { creator: this.account.address }));
+                        _a = helper_1.TxPromise.bind;
+                        _b = [void 0, this.nativeClient];
+                        return [4 /*yield*/, (0, helper_1.signTx)(this.nativeClient, this.account.address, tx, options)];
+                    case 1: return [2 /*return*/, new (_a.apply(helper_1.TxPromise, _b.concat([_c.sent()])))()];
+                }
+            });
+        });
+    };
     KyveBaseMsg.prototype.transfer = function (recipient, amount, options) {
         return __awaiter(this, void 0, void 0, function () {
             var parsedAmount;

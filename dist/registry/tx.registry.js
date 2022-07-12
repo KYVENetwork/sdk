@@ -10,6 +10,7 @@ exports.registry = [
     ["/kyve.registry.v1beta1.MsgUnstakePool", tx_1.MsgUnstakePool],
     ["/kyve.registry.v1beta1.MsgDelegatePool", tx_1.MsgDelegatePool],
     ["/kyve.registry.v1beta1.MsgWithdrawPool", tx_1.MsgWithdrawPool],
+    ["/kyve.registry.v1beta1.MsgRedelegatePool", tx_1.MsgRedelegatePool],
     ["/kyve.registry.v1beta1.MsgUndelegatePool", tx_1.MsgUndelegatePool],
     ["/kyve.registry.v1beta1.MsgSubmitBundleProposal", tx_1.MsgSubmitBundleProposal],
     ["/kyve.registry.v1beta1.MsgVoteProposal", tx_1.MsgVoteProposal],
@@ -61,6 +62,12 @@ exports.encodeTxMsg = {
         return {
             type_url: "/kyve.registry.v1beta1.MsgWithdrawPool",
             value: tx_1.MsgWithdrawPool.encode(value).finish()
+        };
+    },
+    redelegatePool: function (value) {
+        return {
+            type_url: "/kyve.registry.v1beta1.MsgRedelegatePool",
+            value: tx_1.MsgRedelegatePool.encode(value).finish()
         };
     },
     undelegatePool: function (value) {
@@ -140,6 +147,12 @@ exports.withTypeUrl = {
     withdrawPool: function (value) {
         return {
             typeUrl: "/kyve.registry.v1beta1.MsgWithdrawPool",
+            value: value
+        };
+    },
+    redelegatePool: function (value) {
+        return {
+            typeUrl: "/kyve.registry.v1beta1.MsgRedelegatePool",
             value: value
         };
     },
@@ -226,6 +239,12 @@ exports.MessageComposer = {
                 value: tx_1.MsgWithdrawPool.toJSON(value)
             };
         },
+        redelegatePool: function (value) {
+            return {
+                typeUrl: "/kyve.registry.v1beta1.MsgRedelegatePool",
+                value: tx_1.MsgRedelegatePool.toJSON(value)
+            };
+        },
         undelegatePool: function (value) {
             return {
                 typeUrl: "/kyve.registry.v1beta1.MsgUndelegatePool",
@@ -306,6 +325,12 @@ exports.MessageComposer = {
                 value: tx_1.MsgWithdrawPool.fromJSON(value)
             };
         },
+        redelegatePool: function (value) {
+            return {
+                typeUrl: "/kyve.registry.v1beta1.MsgRedelegatePool",
+                value: tx_1.MsgRedelegatePool.fromJSON(value)
+            };
+        },
         undelegatePool: function (value) {
             return {
                 typeUrl: "/kyve.registry.v1beta1.MsgUndelegatePool",
@@ -384,6 +409,12 @@ exports.MessageComposer = {
             return {
                 typeUrl: "/kyve.registry.v1beta1.MsgWithdrawPool",
                 value: tx_1.MsgWithdrawPool.fromPartial(value)
+            };
+        },
+        redelegatePool: function (value) {
+            return {
+                typeUrl: "/kyve.registry.v1beta1.MsgRedelegatePool",
+                value: tx_1.MsgRedelegatePool.fromPartial(value)
             };
         },
         undelegatePool: function (value) {

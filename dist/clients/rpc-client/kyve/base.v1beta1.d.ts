@@ -1,4 +1,4 @@
-import { MsgClaimUploaderRole, MsgDefundPool, MsgDelegatePool, MsgFundPool, MsgReactivateStaker, MsgStakePool, MsgSubmitBundleProposal, MsgUndelegatePool, MsgUnstakePool, MsgUpdateCommission, MsgUpdateMetadata, MsgVoteProposal, MsgWithdrawPool } from "@kyve/proto/dist/proto/kyve/registry/v1beta1/tx";
+import { MsgClaimUploaderRole, MsgDefundPool, MsgDelegatePool, MsgFundPool, MsgReactivateStaker, MsgRedelegatePool, MsgStakePool, MsgSubmitBundleProposal, MsgUndelegatePool, MsgUnstakePool, MsgUpdateCommission, MsgUpdateMetadata, MsgVoteProposal, MsgWithdrawPool } from "@kyve/proto/dist/proto/kyve/registry/v1beta1/tx";
 import { SigningStargateClient } from "@cosmjs/stargate";
 import { StdFee } from "@cosmjs/amino/build/signdoc";
 import { AccountData } from "@cosmjs/amino/build/signer";
@@ -56,6 +56,10 @@ export default class KyveBaseMsg {
         memo?: string;
     }): Promise<TxPromise>;
     reactivateStaker(value: Omit<MsgReactivateStaker, "creator">, options?: {
+        fee?: StdFee | "auto" | number;
+        memo?: string;
+    }): Promise<TxPromise>;
+    redelegatePool(value: Omit<MsgRedelegatePool, "creator">, options?: {
         fee?: StdFee | "auto" | number;
         memo?: string;
     }): Promise<TxPromise>;
