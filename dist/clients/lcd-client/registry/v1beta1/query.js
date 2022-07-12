@@ -149,7 +149,7 @@ var KyveRegistryLCDClient = /** @class */ (function (_super) {
                 switch (_a.label) {
                     case 0:
                         endpoint = "kyve/registry/v1beta1/stakers_list/".concat(params.pool_id);
-                        return [4 /*yield*/, this.request(endpoint)];
+                        return [4 /*yield*/, this.request(endpoint, params)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
