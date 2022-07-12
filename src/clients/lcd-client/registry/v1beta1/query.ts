@@ -141,9 +141,8 @@ export class KyveRegistryLCDClient extends AbstractKyveLCDClient {
   async stakersList(
     params: QueryStakersListRequest
   ): Promise<QueryStakersListResponse> {
-    const parameters: Record<string, any> = {};
     const endpoint = `kyve/registry/v1beta1/stakers_list/${params.pool_id}`;
-    return await this.request(endpoint, parameters);
+    return await this.request(endpoint, params);
   }
 
   /* Staker returns all staker info */
