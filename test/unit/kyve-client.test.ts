@@ -6,6 +6,7 @@ import {
   MsgClaimUploaderRole,
   MsgDefundPool,
   MsgDelegatePool,
+  MsgRedelegatePool,
   MsgFundPool,
   MsgStakePool,
   MsgSubmitBundleProposal,
@@ -14,6 +15,8 @@ import {
   MsgUpdateMetadata,
   MsgVoteProposal,
   MsgWithdrawPool,
+  MsgReactivateStaker,
+  MsgUpdateCommission,
 } from "@kyve/proto/dist/proto/kyve/registry/v1beta1/tx";
 import Mock = jest.Mock;
 import { DENOM, KYVE_DECIMALS } from "../../src/constants";
@@ -88,6 +91,14 @@ const BaseMethods = [
     },
   },
   {
+    methodName: "redelegatePool",
+    parameters: {
+      params: MsgRedelegatePool.fromJSON({}),
+      schema:
+        validator.typeQuerySchemas.getSchemaForSymbol("MsgRedelegatePool"),
+    },
+  },
+  {
     methodName: "withdrawPool",
     parameters: {
       params: MsgWithdrawPool.fromJSON({}),
@@ -141,6 +152,24 @@ const BaseMethods = [
       params: MsgUpdateMetadata.fromJSON({}),
       schema:
         validator.typeQuerySchemas.getSchemaForSymbol("MsgUpdateMetadata"),
+    },
+  },
+  {
+    methodName: "updateCommission",
+    parameters: {
+      params: MsgUpdateCommission.fromJSON({}),
+      schema: validator.typeQuerySchemas.getSchemaForSymbol(
+        "MsgUpdateCommission"
+      ),
+    },
+  },
+  {
+    methodName: "reactivateStaker",
+    parameters: {
+      params: MsgReactivateStaker.fromJSON({}),
+      schema: validator.typeQuerySchemas.getSchemaForSymbol(
+        "MsgReactivateStaker"
+      ),
     },
   },
 ] as const;

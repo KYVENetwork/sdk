@@ -81,6 +81,7 @@ it("Query <stakersList>", async () => {
   });
   const stakers = await lcdClient.kyve.registry.v1beta1.stakersList({
     pool_id: pool.pools[0].id,
+    status: 1,
   });
   const schema = typeQuerySchemas.getSchemaForSymbol(
     "QueryStakersListResponse"
@@ -96,6 +97,7 @@ it("Query <staker>", async () => {
   const stakersListResponse = await lcdClient.kyve.registry.v1beta1.stakersList(
     {
       pool_id: pool.pools[0].id,
+      status: 1,
     }
   );
   const stakerResponse = await lcdClient.kyve.registry.v1beta1.staker({
@@ -160,6 +162,7 @@ it("Query <canPropose>", async () => {
   const stakersListResponse = await lcdClient.kyve.registry.v1beta1.stakersList(
     {
       pool_id: pool.pools[0].id,
+      status: 1,
     }
   );
   const canProposeRes = await lcdClient.kyve.registry.v1beta1.canPropose({
@@ -179,6 +182,7 @@ it("Query <canVote>", async () => {
   const stakersListResponse = await lcdClient.kyve.registry.v1beta1.stakersList(
     {
       pool_id: pool.pools[0].id,
+      status: 1,
     }
   );
   const proposals = await lcdClient.kyve.registry.v1beta1.proposals({
@@ -201,6 +205,7 @@ it("Query <stakeInfo>", async () => {
   const stakersListResponse = await lcdClient.kyve.registry.v1beta1.stakersList(
     {
       pool_id: pool.pools[0].id,
+      status: 1,
     }
   );
   const stakeInfoRes = await lcdClient.kyve.registry.v1beta1.stakeInfo({
@@ -219,6 +224,7 @@ it("Query <accountAssets>", async () => {
   const stakersListResponse = await lcdClient.kyve.registry.v1beta1.stakersList(
     {
       pool_id: pool.pools[0].id,
+      status: 1,
     }
   );
   const accountAssetsRes = await lcdClient.kyve.registry.v1beta1.accountAssets({
@@ -259,6 +265,7 @@ it("Query <accountStakedList>", async () => {
   const stakersListResponse = await lcdClient.kyve.registry.v1beta1.stakersList(
     {
       pool_id: pool.pools[0].id,
+      status: 1,
     }
   );
   const accountStakedListRes =
@@ -282,6 +289,7 @@ it("Query <accountDelegationList>", async () => {
   const stakersListResponse = await lcdClient.kyve.registry.v1beta1.stakersList(
     {
       pool_id: pool.pools[0].id,
+      status: 1,
     }
   );
   const accountDelegationListRes =
@@ -305,6 +313,7 @@ it("Query <delegatorsByPoolAndStaker>", async () => {
   const stakersListResponse = await lcdClient.kyve.registry.v1beta1.stakersList(
     {
       pool_id: pool.pools[0].id,
+      status: 1,
     }
   );
   const delegatorsRes =
@@ -329,6 +338,7 @@ it("Query <delegator>", async () => {
   const stakersListResponse = await lcdClient.kyve.registry.v1beta1.stakersList(
     {
       pool_id: pool.pools[0].id,
+      status: 1,
     }
   );
   const delegatorsRes =
@@ -353,6 +363,7 @@ it("Query <stakersByPoolAndDelegator>", async () => {
   const stakersListResponse = await lcdClient.kyve.registry.v1beta1.stakersList(
     {
       pool_id: pool.pools[0].id,
+      status: 1,
     }
   );
   const delegatorsRes =
@@ -383,6 +394,7 @@ it("Query <accountStakingUnbondingsRequest>", async () => {
   const stakersListResponse = await lcdClient.kyve.registry.v1beta1.stakersList(
     {
       pool_id: pool.pools[0].id,
+      status: 1,
     }
   );
   //todo: suppose that in a pool at least one unbonding staker, need mock data
@@ -410,6 +422,7 @@ it("Query <accountDelegationUnbondings>", async () => {
   const stakersListResponse = await lcdClient.kyve.registry.v1beta1.stakersList(
     {
       pool_id: pool.pools[0].id,
+      status: 1,
     }
   );
   //todo: suppose that in a pool at least one unbonding staker, need mock data

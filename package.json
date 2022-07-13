@@ -36,7 +36,7 @@
     "@cosmjs/tendermint-rpc": "0.28.0",
     "@cosmostation/extension-client": "^0.0.6",
     "@keplr-wallet/cosmos": "0.9.16",
-    "@kyve/proto": "https://github.com/KYVENetwork/proto.git#v0.6.0",
+    "@kyve/proto": "1.0.0",
     "axios": "0.25.0",
     "bech32": "2.0.0",
     "bignumber.js": "9.0.2",
