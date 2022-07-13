@@ -1,0 +1,32 @@
+name: unit-tests
+
+on:
+ push:
+   #TODO change it when release
+   branches: [ "feature/v2" ]
+ pull_request:
+   #TODO change it when release
+   branches: [ "feature/v2" ]
+
+jobs:
+ tests:
+
+   runs-on: ubuntu-latest
+
+   strategy:
+     matrix:
+       node-version: [ 16.x, 18.x ]
+   steps:
+     - name: "checkout repo"
+       uses: actions/checkout@v3
+       with:
+         ref: "feature/v2"
+     - name: "nodejs install"
+       uses: actions/setup-node@v3
+       with:
+         node-version: ${{ matrix.node-version }}
+         cache: 'yarn'
+     - name: "dependency install"
+       run: yarn install --frozen-lockfile
+     - name: "run tests"
+       run: yarn test:unit
