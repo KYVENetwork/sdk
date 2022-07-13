@@ -66,7 +66,11 @@ function calcFee(gasEstimation, fee) {
         var multiplier;
         return __generator(this, function (_a) {
             multiplier = typeof fee === "number" ? fee : 1.5;
-            return [2 /*return*/, (0, stargate_1.calculateFee)(Math.round(gasEstimation * multiplier), "5000000tkyve")];
+            // calculateFee(Math.round(gasEstimation * multiplier), "5000000tkyve");
+            return [2 /*return*/, {
+                    amount: (0, stargate_1.coins)('5000000', 'tkyve'),
+                    gas: Math.floor(gasEstimation * multiplier).toString()
+                }];
         });
     });
 }

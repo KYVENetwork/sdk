@@ -21,7 +21,11 @@ export class TxPromise {
 }
 async function calcFee(gasEstimation: number, fee: "auto" | number) {
   const multiplier = typeof fee === "number" ? fee : 1.5;
-  return calculateFee(Math.round(gasEstimation * multiplier), "5000000tkyve");
+  // calculateFee(Math.round(gasEstimation * multiplier), "5000000tkyve");
+  return {
+    amount: coins('5000000', 'tkyve'),
+    gas: Math.floor(gasEstimation * multiplier).toString(),
+  }
 }
 
 export async function signTx(
