@@ -7,7 +7,6 @@ on:
       - reopened
       - converted_to_draft
       - edited
-    #TODO change it when release
     branches: ["main"]
 
 jobs:
