@@ -25,7 +25,9 @@
     "test": "jest test",
     "test:unit": "jest test/unit",
     "test:integrations": "jest test/integrations",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable"
   },
   "dependencies": {
     "@cosmjs/amino": "0.28.3",
