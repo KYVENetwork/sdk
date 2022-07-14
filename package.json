@@ -24,7 +24,8 @@
     "doc": "typedoc",
     "test": "jest test",
     "test:unit": "jest test/unit",
-    "test:integrations": "jest test/integrations"
+    "test:integrations": "jest test/integrations",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@cosmjs/amino": "0.28.3",
