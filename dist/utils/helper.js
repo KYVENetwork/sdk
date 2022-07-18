@@ -43,9 +43,10 @@ var encoding_1 = require("@cosmjs/encoding");
 var crypto_1 = require("@cosmjs/crypto");
 var stargate_1 = require("@cosmjs/stargate");
 var TxPromise = /** @class */ (function () {
-    function TxPromise(nativeClient, txBytes) {
+    function TxPromise(nativeClient, tx) {
         this.nativeClient = nativeClient;
-        this.txBytes = txBytes;
+        this.txBytes = tx.txRawBytes;
+        this.fee = tx.fee;
         this.txHash = (0, encoding_1.toHex)((0, crypto_1.sha256)(this.txBytes)).toUpperCase();
     }
     TxPromise.prototype.execute = function () {
@@ -68,7 +69,7 @@ function calcFee(gasEstimation, fee) {
             multiplier = typeof fee === "number" ? fee : 1.5;
             // calculateFee(Math.round(gasEstimation * multiplier), "5000000tkyve");
             return [2 /*return*/, {
-                    amount: (0, stargate_1.coins)('5000000', 'tkyve'),
+                    amount: (0, stargate_1.coins)("5000000", "tkyve"),
                     gas: Math.floor(gasEstimation * multiplier).toString()
                 }];
         });
@@ -90,7 +91,10 @@ function signTx(nativeClient, address, tx, options) {
                     return [4 /*yield*/, nativeClient.sign(address, [tx], fee, (options === null || options === void 0 ? void 0 : options.memo) ? options === null || options === void 0 ? void 0 : options.memo : "")];
                 case 3:
                     txRaw = _a.sent();
-                    return [2 /*return*/, TxRaw.encode(txRaw).finish()];
+                    return [2 /*return*/, {
+                            txRawBytes: TxRaw.encode(txRaw).finish(),
+                            fee: fee
+                        }];
                 case 4:
                     if (!(options.fee === "auto" || typeof options.fee == "number")) return [3 /*break*/, 8];
                     return [4 /*yield*/, nativeClient.simulate(address, [tx], options === null || options === void 0 ? void 0 : options.memo)];
@@ -102,11 +106,17 @@ function signTx(nativeClient, address, tx, options) {
                     return [4 /*yield*/, nativeClient.sign(address, [tx], fee, (options === null || options === void 0 ? void 0 : options.memo) ? options === null || options === void 0 ? void 0 : options.memo : "")];
                 case 7:
                     txRaw = _a.sent();
-                    return [2 /*return*/, TxRaw.encode(txRaw).finish()];
+                    return [2 /*return*/, {
+                            txRawBytes: TxRaw.encode(txRaw).finish(),
+                            fee: fee
+                        }];
                 case 8: return [4 /*yield*/, nativeClient.sign(address, [tx], options.fee, (options === null || options === void 0 ? void 0 : options.memo) ? options === null || options === void 0 ? void 0 : options.memo : "")];
                 case 9:
                     txRaw = _a.sent();
-                    return [2 /*return*/, TxRaw.encode(txRaw).finish()];
+                    return [2 /*return*/, {
+                            txRawBytes: TxRaw.encode(txRaw).finish(),
+                            fee: options.fee
+                        }];
             }
         });
     });
