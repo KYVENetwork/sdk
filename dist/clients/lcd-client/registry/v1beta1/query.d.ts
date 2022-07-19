@@ -1,4 +1,6 @@
-import { QueryAccountAssetsRequest, QueryAccountAssetsResponse, QueryAccountDelegationListRequest, QueryAccountDelegationListResponse, QueryAccountFundedListRequest, QueryAccountFundedListResponse, QueryAccountStakedListRequest, QueryAccountStakedListResponse, QueryCanProposeRequest, QueryCanProposeResponse, QueryCanVoteRequest, QueryCanVoteResponse, QueryDelegatorRequest, QueryDelegatorResponse, QueryDelegatorsByPoolAndStakerRequest, QueryDelegatorsByPoolAndStakerResponse, QueryFunderRequest, QueryFunderResponse, QueryFundersListRequest, QueryFundersListResponse, QueryParamsResponse, QueryPoolRequest, QueryPoolResponse, QueryPoolsRequest, QueryPoolsResponse, QueryProposalByHeightRequest, QueryProposalByHeightResponse, QueryProposalRequest, QueryProposalResponse, QueryProposalsRequest, QueryProposalsResponse, QueryStakeInfoRequest, QueryStakeInfoResponse, QueryStakerRequest, QueryStakerResponse, QueryStakersByPoolAndDelegatorRequest, QueryStakersByPoolAndDelegatorResponse, QueryStakersListRequest, QueryStakersListResponse, QueryAccountStakingUnbondingsRequest, QueryAccountStakingUnbondingsResponse, QueryAccountDelegationUnbondingsResponse, QueryAccountDelegationUnbondingsRequest } from "@kyve/proto/dist/proto/kyve/registry/v1beta1/query";
+import { QueryAccountAssetsRequest, QueryAccountDelegationListRequest, QueryAccountFundedListRequest, QueryAccountFundedListResponse, QueryAccountStakedListRequest, QueryCanProposeRequest, QueryCanVoteRequest, QueryDelegatorRequest, QueryDelegatorResponse, QueryDelegatorsByPoolAndStakerRequest, QueryFunderRequest, QueryFundersListRequest, QueryParamsResponse, QueryPoolRequest, QueryPoolsRequest, QueryProposalByHeightRequest, QueryProposalRequest, QueryProposalsRequest, QueryStakeInfoRequest, QueryStakeInfoResponse, QueryStakerRequest, QueryStakersByPoolAndDelegatorRequest, QueryStakersListRequest, QueryAccountStakingUnbondingsRequest, QueryAccountDelegationUnbondingsRequest } from "@kyve/proto/dist/proto/kyve/registry/v1beta1/query";
+import { kyve } from "@kyve/proto";
+import kyveQueryRes = kyve.registry.v1beta1.kyveQueryRes;
 import { PageRequest } from "@kyve/proto/dist/proto/cosmos/base/query/v1beta1/pagination";
 import { AbstractKyveLCDClient } from "../../lcd-client.abstract";
 declare type NestedPartial<T> = {
@@ -35,26 +37,26 @@ declare type PaginationResponseTypeUtil<T> = Overwrite<T, {
 export declare class KyveRegistryLCDClient extends AbstractKyveLCDClient {
     constructor(restEndpoint: string);
     params(): Promise<QueryParamsResponse>;
-    pool(params: QueryPoolRequest): Promise<QueryPoolResponse>;
-    pools(params?: PaginationAllPartialRequestUtilType<QueryPoolsRequest>): Promise<PaginationResponseTypeUtil<QueryPoolsResponse>>;
-    fundersList(params: QueryFundersListRequest): Promise<QueryFundersListResponse>;
-    funder(params: QueryFunderRequest): Promise<QueryFunderResponse>;
-    stakersList(params: QueryStakersListRequest): Promise<QueryStakersListResponse>;
-    staker(params: QueryStakerRequest): Promise<QueryStakerResponse>;
-    proposal(params: QueryProposalRequest): Promise<QueryProposalResponse>;
-    proposals(params: PaginationPartialRequestUtilType<QueryProposalsRequest>): Promise<PaginationResponseTypeUtil<QueryProposalsResponse>>;
-    proposalByHeight(params: QueryProposalByHeightRequest): Promise<QueryProposalByHeightResponse>;
-    canPropose(params: QueryCanProposeRequest): Promise<QueryCanProposeResponse>;
-    canVote(params: QueryCanVoteRequest): Promise<QueryCanVoteResponse>;
+    pool(params: QueryPoolRequest): Promise<kyveQueryRes.QueryPoolResponse>;
+    pools(params?: PaginationAllPartialRequestUtilType<QueryPoolsRequest>): Promise<PaginationResponseTypeUtil<kyveQueryRes.QueryPoolsResponse>>;
+    fundersList(params: QueryFundersListRequest): Promise<kyveQueryRes.QueryFundersListResponse>;
+    funder(params: QueryFunderRequest): Promise<kyveQueryRes.QueryFunderResponse>;
+    stakersList(params: QueryStakersListRequest): Promise<kyveQueryRes.QueryStakersListResponse>;
+    staker(params: QueryStakerRequest): Promise<kyveQueryRes.QueryStakerResponse>;
+    proposal(params: QueryProposalRequest): Promise<kyveQueryRes.QueryProposalResponse>;
+    proposals(params: PaginationPartialRequestUtilType<QueryProposalsRequest>): Promise<PaginationResponseTypeUtil<kyveQueryRes.QueryProposalsResponse>>;
+    proposalByHeight(params: QueryProposalByHeightRequest): Promise<kyveQueryRes.QueryProposalByHeightResponse>;
+    canPropose(params: QueryCanProposeRequest): Promise<kyveQueryRes.QueryCanProposeResponse>;
+    canVote(params: QueryCanVoteRequest): Promise<kyveQueryRes.QueryCanVoteResponse>;
     stakeInfo(params: QueryStakeInfoRequest): Promise<QueryStakeInfoResponse>;
-    accountAssets(params: QueryAccountAssetsRequest): Promise<QueryAccountAssetsResponse>;
+    accountAssets(params: QueryAccountAssetsRequest): Promise<kyveQueryRes.QueryAccountAssetsResponse>;
     accountFundedList(params: PaginationPartialRequestUtilType<QueryAccountFundedListRequest>): Promise<PaginationResponseTypeUtil<QueryAccountFundedListResponse>>;
-    accountStakedList(params: PaginationPartialRequestUtilType<QueryAccountStakedListRequest>): Promise<PaginationResponseTypeUtil<QueryAccountStakedListResponse>>;
-    accountDelegationList(params: PaginationPartialRequestUtilType<QueryAccountDelegationListRequest>): Promise<PaginationResponseTypeUtil<QueryAccountDelegationListResponse>>;
+    accountStakedList(params: PaginationPartialRequestUtilType<QueryAccountStakedListRequest>): Promise<PaginationResponseTypeUtil<kyveQueryRes.QueryAccountStakedListResponse>>;
+    accountDelegationList(params: PaginationPartialRequestUtilType<QueryAccountDelegationListRequest>): Promise<PaginationResponseTypeUtil<kyveQueryRes.QueryAccountDelegationListResponse>>;
     delegator(params: QueryDelegatorRequest): Promise<QueryDelegatorResponse>;
-    delegatorsByPoolAndStaker(params: PaginationPartialRequestUtilType<QueryDelegatorsByPoolAndStakerRequest>): Promise<PaginationResponseTypeUtil<QueryDelegatorsByPoolAndStakerResponse>>;
-    stakersByPoolAndDelegator(params: PaginationPartialRequestUtilType<QueryStakersByPoolAndDelegatorRequest>): Promise<PaginationResponseTypeUtil<QueryStakersByPoolAndDelegatorResponse>>;
-    accountStakingUnbonding(params: PaginationAllPartialRequestUtilType<QueryAccountStakingUnbondingsRequest>): Promise<PaginationResponseTypeUtil<QueryAccountStakingUnbondingsResponse>>;
-    accountDelegationUnbondings(params: PaginationAllPartialRequestUtilType<QueryAccountDelegationUnbondingsRequest>): Promise<PaginationResponseTypeUtil<QueryAccountDelegationUnbondingsResponse>>;
+    delegatorsByPoolAndStaker(params: PaginationPartialRequestUtilType<QueryDelegatorsByPoolAndStakerRequest>): Promise<PaginationResponseTypeUtil<kyveQueryRes.QueryDelegatorsByPoolAndStakerResponse>>;
+    stakersByPoolAndDelegator(params: PaginationPartialRequestUtilType<QueryStakersByPoolAndDelegatorRequest>): Promise<PaginationResponseTypeUtil<kyveQueryRes.QueryStakersByPoolAndDelegatorResponse>>;
+    accountStakingUnbonding(params: PaginationAllPartialRequestUtilType<QueryAccountStakingUnbondingsRequest>): Promise<PaginationResponseTypeUtil<kyveQueryRes.QueryAccountStakingUnbondingsResponse>>;
+    accountDelegationUnbondings(params: PaginationAllPartialRequestUtilType<QueryAccountDelegationUnbondingsRequest>): Promise<PaginationResponseTypeUtil<kyveQueryRes.QueryAccountDelegationUnbondingsResponse>>;
 }
 export {};
