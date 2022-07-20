@@ -113,7 +113,6 @@ describe("sign string", () => {
         TEST_STRING,
         sign.pub_key.value
       );
-      console.log(sign.signature);
       expect(result).toEqual(true);
     });
     test("should verify opposite string as falsy", async () => {
