@@ -18,7 +18,10 @@ exports.registry = [
     ["/kyve.registry.v1beta1.MsgUpdateMetadata", tx_1.MsgUpdateMetadata],
     ["/kyve.registry.v1beta1.MsgUpdateCommission", tx_1.MsgUpdateCommission],
     ["/kyve.registry.v1beta1.MsgReactivateStaker", tx_1.MsgReactivateStaker],
-    ["/cosmos.gov.v1beta1.MsgSubmitProposal", proto_1.cosmos.registry.v1beta1.cosmosGovTx.MsgSubmitProposal],
+    [
+        "/cosmos.gov.v1beta1.MsgSubmitProposal",
+        proto_1.cosmos.registry.v1beta1.cosmosGovTx.MsgSubmitProposal,
+    ],
 ];
 var load = function (protoRegistry) {
     exports.registry.forEach(function (_a) {
