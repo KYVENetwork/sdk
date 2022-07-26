@@ -24,7 +24,10 @@
     "doc": "typedoc",
     "test": "jest test",
     "test:unit": "jest test/unit",
-    "test:integrations": "jest test/integrations"
+    "test:integrations": "jest test/integrations",
+    "postinstall": "husky install",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable"
   },
   "dependencies": {
     "@cosmjs/amino": "0.28.3",
@@ -48,7 +51,9 @@
     "@types/qs": "^6.9.7",
     "ajv": "^8.11.0",
     "copyfiles": "^2.4.1",
+    "husky": "^8.0.1",
     "jest": "^28.1.1",
+    "pinst": "^3.0.0",
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^28.0.5",
