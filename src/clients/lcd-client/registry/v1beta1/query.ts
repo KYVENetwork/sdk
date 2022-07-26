@@ -25,7 +25,7 @@ import {
   QueryAccountStakingUnbondingsRequest,
   QueryAccountDelegationUnbondingsRequest,
 } from "@kyve/proto/dist/proto/kyve/registry/v1beta1/query";
-import {kyve} from "@kyve/proto"
+import { kyve } from "@kyve/proto";
 import kyveQueryRes = kyve.registry.v1beta1.kyveQueryRes;
 import { PageRequest } from "@kyve/proto/dist/proto/cosmos/base/query/v1beta1/pagination";
 import { AbstractKyveLCDClient } from "../../lcd-client.abstract";
@@ -76,7 +76,9 @@ export class KyveRegistryLCDClient extends AbstractKyveLCDClient {
   }
 
   /* Pool queries a pool by ID. */
-  async pool(params: QueryPoolRequest): Promise<kyveQueryRes.QueryPoolResponse> {
+  async pool(
+    params: QueryPoolRequest
+  ): Promise<kyveQueryRes.QueryPoolResponse> {
     const endpoint = `kyve/registry/v1beta1/pool/${params.id}`;
     return await this.request(endpoint);
   }
@@ -116,7 +118,9 @@ export class KyveRegistryLCDClient extends AbstractKyveLCDClient {
   }
 
   /* Funder returns all funder info */
-  async funder(params: QueryFunderRequest): Promise<kyveQueryRes.QueryFunderResponse> {
+  async funder(
+    params: QueryFunderRequest
+  ): Promise<kyveQueryRes.QueryFunderResponse> {
     const endpoint = `kyve/registry/v1beta1/funder/${params.pool_id}/${params.funder}`;
     return await this.request(endpoint);
   }
@@ -130,13 +134,17 @@ export class KyveRegistryLCDClient extends AbstractKyveLCDClient {
   }
 
   /* Staker returns all staker info */
-  async staker(params: QueryStakerRequest): Promise<kyveQueryRes.QueryStakerResponse> {
+  async staker(
+    params: QueryStakerRequest
+  ): Promise<kyveQueryRes.QueryStakerResponse> {
     const endpoint = `kyve/registry/v1beta1/staker/${params.pool_id}/${params.staker}`;
     return await this.request(endpoint);
   }
 
   /* Proposal ... */
-  async proposal(params: QueryProposalRequest): Promise<kyveQueryRes.QueryProposalResponse> {
+  async proposal(
+    params: QueryProposalRequest
+  ): Promise<kyveQueryRes.QueryProposalResponse> {
     const endpoint = `kyve/registry/v1beta1/proposal/${params.storage_id}`;
     return await this.request(endpoint);
   }
@@ -171,7 +179,9 @@ export class KyveRegistryLCDClient extends AbstractKyveLCDClient {
   }
 
   /* CanVote checks if voter on pool can still vote for the given bundle */
-  async canVote(params: QueryCanVoteRequest): Promise<kyveQueryRes.QueryCanVoteResponse> {
+  async canVote(
+    params: QueryCanVoteRequest
+  ): Promise<kyveQueryRes.QueryCanVoteResponse> {
     const endpoint = `kyve/registry/v1beta1/can_vote/${params.pool_id}/${params.voter}/${params.storage_id}`;
     return await this.request(endpoint);
   }
@@ -203,7 +213,9 @@ export class KyveRegistryLCDClient extends AbstractKyveLCDClient {
   /* AccountStakedList ... */
   async accountStakedList(
     params: PaginationPartialRequestUtilType<QueryAccountStakedListRequest>
-  ): Promise<PaginationResponseTypeUtil<kyveQueryRes.QueryAccountStakedListResponse>> {
+  ): Promise<
+    PaginationResponseTypeUtil<kyveQueryRes.QueryAccountStakedListResponse>
+  > {
     const endpoint = `kyve/registry/v1beta1/account_staked_list/${params.address}`;
     return await this.request(endpoint);
   }
@@ -211,7 +223,9 @@ export class KyveRegistryLCDClient extends AbstractKyveLCDClient {
   /* AccountDelegationList ... */
   async accountDelegationList(
     params: PaginationPartialRequestUtilType<QueryAccountDelegationListRequest>
-  ): Promise<PaginationResponseTypeUtil<kyveQueryRes.QueryAccountDelegationListResponse>> {
+  ): Promise<
+    PaginationResponseTypeUtil<kyveQueryRes.QueryAccountDelegationListResponse>
+  > {
     const parameters: Record<string, any> = {};
     if (typeof params?.pagination !== "undefined") {
       parameters.pagination = params.pagination;
