@@ -101,6 +101,11 @@ export class KyveSDK {
       chainName: this.network.chainName,
     });
     await window.keplr.enable(this.network.chainId);
+    window.keplr.defaultOptions = {
+      sign: {
+        preferNoSetFee: true,
+      },
+    };
     const signer = window.keplr.getOfflineSigner(this.network.chainId);
     const walletName = (await window.keplr.getKey(this.network.chainId)).name;
     const keplr = window.keplr;
