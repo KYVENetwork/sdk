@@ -146,6 +146,11 @@ var KyveSDK = /** @class */ (function () {
                         return [4 /*yield*/, window.keplr.enable(this.network.chainId)];
                     case 2:
                         _a.sent();
+                        window.keplr.defaultOptions = {
+                            sign: {
+                                preferNoSetFee: true
+                            }
+                        };
                         signer = window.keplr.getOfflineSigner(this.network.chainId);
                         return [4 /*yield*/, window.keplr.getKey(this.network.chainId)];
                     case 3:

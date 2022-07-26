@@ -13,7 +13,7 @@
     "Blockchain",
     "PoS"
   ],
-  "author": "John Letey <john@kyve.network>, Troy Kessler <troy@kyve.network>, Max Breithecker <max@kyve.network>",
+  "author": "Ruslan Hlaznov <ruslan@kyve.network>, John Letey <john@kyve.network>, Troy Kessler <troy@kyve.network>, Max Breithecker <max@kyve.network>",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
