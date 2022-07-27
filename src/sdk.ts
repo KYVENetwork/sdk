@@ -193,6 +193,14 @@ export class KyveSDK {
     return getSigningKyveClient(this.network.rpc, signer, aminoSigner);
   }
 
+  static async generateMnemonic(): Promise<string> {
+    const signer = await DirectSecp256k1HdWallet.generate(24, {
+      prefix: PREFIX,
+    });
+
+    return signer.mnemonic;
+  }
+
   static formatBalance(balance: string, decimals: number = 2): string {
     return humanize(
       new BigNumber(balance)
@@ -200,12 +208,14 @@ export class KyveSDK {
         .toFixed(decimals)
     );
   }
+
   static getAddressFromPubKey(pubKey: string) {
     return pubkeyToAddress(
       { type: "tendermint/PubKeySecp256k1", value: pubKey },
       PREFIX
     );
   }
+
   static async verifyString(
     signature: string,
     data: string,
