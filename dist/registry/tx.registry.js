@@ -2,7 +2,7 @@
 exports.__esModule = true;
 exports.MessageComposer = exports.withTypeUrl = exports.encodeTxMsg = exports.load = exports.registry = void 0;
 var tx_1 = require("@kyve/proto/dist/proto/kyve/registry/v1beta1/tx");
-var proto_1 = require("@kyve/proto");
+var cosmos_registry_1 = require("./cosmos.registry");
 exports.registry = [
     ["/kyve.registry.v1beta1.MsgFundPool", tx_1.MsgFundPool],
     ["/kyve.registry.v1beta1.MsgDefundPool", tx_1.MsgDefundPool],
@@ -18,10 +18,7 @@ exports.registry = [
     ["/kyve.registry.v1beta1.MsgUpdateMetadata", tx_1.MsgUpdateMetadata],
     ["/kyve.registry.v1beta1.MsgUpdateCommission", tx_1.MsgUpdateCommission],
     ["/kyve.registry.v1beta1.MsgReactivateStaker", tx_1.MsgReactivateStaker],
-    [
-        "/cosmos.gov.v1beta1.MsgSubmitProposal",
-        proto_1.cosmos.registry.v1beta1.cosmosGovTx.MsgSubmitProposal,
-    ],
+    ["/cosmos.gov.v1beta1.MsgSubmitProposal", cosmos_registry_1.MsgSubmitProposal],
 ];
 var load = function (protoRegistry) {
     exports.registry.forEach(function (_a) {
