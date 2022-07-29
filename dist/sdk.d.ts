@@ -46,6 +46,7 @@ export declare class KyveSDK {
      * generate KyveClient instance without mnemonic
      */
     generate(): Promise<KyveClient>;
+    static generateMnemonic(): Promise<string>;
     static formatBalance(balance: string, decimals?: number): string;
     static getAddressFromPubKey(pubKey: string): string;
     static verifyString(signature: string, data: string, pubKey: string): Promise<boolean>;

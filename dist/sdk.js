@@ -250,6 +250,21 @@ var KyveSDK = /** @class */ (function () {
             });
         });
     };
+    KyveSDK.generateMnemonic = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var signer;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, proto_signing_1.DirectSecp256k1HdWallet.generate(24, {
+                            prefix: constants_1.PREFIX
+                        })];
+                    case 1:
+                        signer = _a.sent();
+                        return [2 /*return*/, signer.mnemonic];
+                }
+            });
+        });
+    };
     KyveSDK.formatBalance = function (balance, decimals) {
         if (decimals === void 0) { decimals = 2; }
         return (0, humanize_number_1["default"])(new bignumber_js_1.BigNumber(balance)
