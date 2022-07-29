@@ -81,8 +81,8 @@ exports.KYVE_COSMOSTATION_CONFIG = {
     coinType: "118",
     decimals: exports.KYVE_DECIMALS,
     gasRate: {
-        tiny: '1.6',
-        low: '2',
-        average: '0.8'
+        tiny: "1.6",
+        low: "2",
+        average: "0.8"
     }
 };
