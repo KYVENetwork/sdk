@@ -67,7 +67,7 @@ var KyveGovMsg = /** @class */ (function () {
                 switch (_c.label) {
                     case 0:
                         content = {
-                            typeUrl: "/cosmos.gov.v1beta1.TextProposal",
+                            type_url: "/cosmos.gov.v1beta1.TextProposal",
                             value: gov_1.TextProposal.encode(value).finish()
                         };
                         tx = this.createGovTx(amount, content, options === null || options === void 0 ? void 0 : options.isExpedited);
@@ -86,7 +86,7 @@ var KyveGovMsg = /** @class */ (function () {
                 switch (_c.label) {
                     case 0:
                         content = {
-                            typeUrl: "/cosmos.params.v1beta1.ParameterChangeProposal",
+                            type_url: "/cosmos.params.v1beta1.ParameterChangeProposal",
                             value: params_1.ParameterChangeProposal.encode(value).finish()
                         };
                         tx = this.createGovTx(amount, content, options === null || options === void 0 ? void 0 : options.isExpedited);
@@ -105,7 +105,7 @@ var KyveGovMsg = /** @class */ (function () {
                 switch (_c.label) {
                     case 0:
                         content = {
-                            typeUrl: "/kyve.registry.v1beta1.UpdatePoolProposal",
+                            type_url: "/kyve.registry.v1beta1.UpdatePoolProposal",
                             value: gov_2.UpdatePoolProposal.encode(value).finish()
                         };
                         tx = this.createGovTx(amount, content, options === null || options === void 0 ? void 0 : options.isExpedited);
@@ -124,7 +124,7 @@ var KyveGovMsg = /** @class */ (function () {
                 switch (_c.label) {
                     case 0:
                         content = {
-                            typeUrl: "/kyve.registry.v1beta1.PausePoolProposal",
+                            type_url: "/kyve.registry.v1beta1.PausePoolProposal",
                             value: gov_2.PausePoolProposal.encode(value).finish()
                         };
                         tx = this.createGovTx(amount, content, options === null || options === void 0 ? void 0 : options.isExpedited);
@@ -143,7 +143,7 @@ var KyveGovMsg = /** @class */ (function () {
                 switch (_c.label) {
                     case 0:
                         content = {
-                            typeUrl: "/kyve.registry.v1beta1.UnpausePoolProposal",
+                            type_url: "/kyve.registry.v1beta1.UnpausePoolProposal",
                             value: gov_2.UnpausePoolProposal.encode(value).finish()
                         };
                         tx = this.createGovTx(amount, content, options === null || options === void 0 ? void 0 : options.isExpedited);
@@ -162,7 +162,7 @@ var KyveGovMsg = /** @class */ (function () {
                 switch (_c.label) {
                     case 0:
                         content = {
-                            typeUrl: "/kyve.registry.v1beta1.SchedulePoolUpgradeProposal",
+                            type_url: "/kyve.registry.v1beta1.SchedulePoolUpgradeProposal",
                             value: gov_2.SchedulePoolUpgradeProposal.encode(value).finish()
                         };
                         tx = this.createGovTx(amount, content, options === null || options === void 0 ? void 0 : options.isExpedited);
@@ -181,7 +181,7 @@ var KyveGovMsg = /** @class */ (function () {
                 switch (_c.label) {
                     case 0:
                         content = {
-                            typeUrl: "/kyve.registry.v1beta1.CancelPoolUpgradeProposal",
+                            type_url: "/kyve.registry.v1beta1.CancelPoolUpgradeProposal",
                             value: gov_2.CancelPoolUpgradeProposal.encode(value).finish()
                         };
                         tx = this.createGovTx(amount, content, options === null || options === void 0 ? void 0 : options.isExpedited);
@@ -200,7 +200,7 @@ var KyveGovMsg = /** @class */ (function () {
                 switch (_c.label) {
                     case 0:
                         content = {
-                            typeUrl: "/kyve.registry.v1beta1.ResetPoolProposal",
+                            type_url: "/kyve.registry.v1beta1.ResetPoolProposal",
                             value: gov_2.ResetPoolProposal.encode(value).finish()
                         };
                         tx = this.createGovTx(amount, content, options === null || options === void 0 ? void 0 : options.isExpedited);
@@ -219,7 +219,7 @@ var KyveGovMsg = /** @class */ (function () {
                 switch (_c.label) {
                     case 0:
                         content = {
-                            typeUrl: "/kyve.registry.v1beta1.CreatePoolProposal",
+                            type_url: "/kyve.registry.v1beta1.CreatePoolProposal",
                             value: gov_2.CreatePoolProposal.encode(value).finish()
                         };
                         tx = this.createGovTx(amount, content, options === null || options === void 0 ? void 0 : options.isExpedited);

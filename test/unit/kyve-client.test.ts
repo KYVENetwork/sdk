@@ -317,7 +317,7 @@ describe("Gov methods", () => {
           typeUrl: expect.any(String),
           value: {
             content: {
-              typeUrl: expect.any(String),
+              type_url: expect.any(String),
               value: expect.any(Uint8Array),
             },
             initial_deposit: [

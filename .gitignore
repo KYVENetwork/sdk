@@ -1,5 +1,6 @@
 .idea
 node_modules
 docs
+.DS_Store
 test.js
 test.ts
