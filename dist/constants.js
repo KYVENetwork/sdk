@@ -64,7 +64,11 @@ exports.KYVE_KEPLR_CONFIG = {
         },
     ],
     coinType: 118,
-    gasPriceStep: { low: 0, average: 0, high: 0 },
+    gasPriceStep: {
+        low: 2,
+        average: 2.5,
+        high: 10
+    },
     features: ["ibc-transfer", "ibc-go"]
 };
 exports.KYVE_COSMOSTATION_CONFIG = {
@@ -75,5 +79,10 @@ exports.KYVE_COSMOSTATION_CONFIG = {
     displayDenom: "KYVE",
     addressPrefix: exports.PREFIX,
     coinType: "118",
-    decimals: exports.KYVE_DECIMALS
+    decimals: exports.KYVE_DECIMALS,
+    gasRate: {
+        tiny: "1.6",
+        low: "2",
+        average: "0.8"
+    }
 };
